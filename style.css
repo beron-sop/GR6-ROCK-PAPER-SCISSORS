@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-image: url(images/ropasc.jpg.jpg); 
+  background-position: center; 
+  background-size:120% ;
+  background-repeat:repeat;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.body1 {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #24272E;
+  text-align: center;
+}
+
+header {
+  background:whitesmoke;
+  padding: 13px;
+}
+
+header > h1 {
+  color: white;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.screen {
+  padding: 2rem 3rem;
+  border-radius: 14px;
+  color: whitesmoke;
+  background:rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 10px #d4d2d6;
+  display: inline-flex;
+  margin: 200px;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.btn {
+  border: 0;
+  padding: 15px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  border: revert;
+  border-radius: 10px;
+  margin: 0.8rem;
+  border-color: cornsilk;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.back-btn {
+  color: #a1d5ed;
+  font-size: medium;
+  margin: 0.8rem;
+  padding: 10px;
+}
+
+.display {
+  text-align: center;
+}
+
+ol {
+  margin: 20px 0;
+  padding: 0 0 0 20px;
+}
+
+ol li {
+  margin-bottom: 10px;
+}
+
+ol, ol li {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.scoreboard {
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
+  border-radius: 4px;
+  text-align: center;
+  width: 200px;
+  color: white;
+  font-size: 46px;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.badge {
+  background: #E25840;
+  color: white;
+  font-size: 14px;
+  padding: 2px 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+#user-score, #computer-score {
+  font-weight: bold;
+}
+
+#user-label {
+  position: absolute;
+  top: 20px;
+  left: -25px;
+  border-radius: 14px;
+}
+
+#computer-label {
+  position: absolute;
+  top: 20px;
+  right: -25px;
+  border-radius: 14px;
+}
+
+::selection {
+  color: #fff;
+}
+
+.container {
+  padding: 2rem 6rem;
+  border-radius: 14px;
+  background-color:rgba(0, 0, 0, 0.5);
+  box-shadow:  0px 17px 20px 0px #d4d2d6;
+  display: inline-block;
+  margin: 50px 25px;
+}
+
+.container.win {
+  box-shadow: 0px 17px 20px 0px rgb(255 255 22 / 50%);
+}
+
+.container.draw {
+  box-shadow: 0px 17px 20px 0px rgba(118, 247, 98, 0.79);
+}
+
+.container.lose {
+  box-shadow: 0px 17px 20px 0px rgb(214 12 12 / 79%);
+}
+
+.inst_image img {
+  width: 200px;
+  margin: 20px;
+}
+
+.result_images {
+  display: flex;
+  column-gap: 7rem;
+}
+
+.container.start .user_result {
+  transform-origin: left;
+  animation: userShake 0.7s ease infinite;
+}
+
+@keyframes userShake {
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+.container.start .cpu_result {
+  transform-origin: right;
+  animation: cpuShake 0.7s ease infinite;
+}
+
+@keyframes cpuShake {
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+
+.result_images img {
+  width: 100px;
+}
+
+.user_result img {
+  transform: rotate(90deg);
+}
+
+.cpu_result img {
+  transform: rotate(-90deg) rotateY(180deg);
+}
+
+.result {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  margin-top: 1.5rem;
+}
+
+.option_image img {
+  width: 50px;
+}
+
+.option_images {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  justify-content: space-between;
+}
+
+.container.start .option_images {
+  pointer-events: none;
+}
+
+.option_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.option_image:hover {
+  opacity: 1;
+}
+
+.option_image.active {
+  opacity: 1;
+}
+
+.option_image img {
+  pointer-events: none;
+}
+
+.option_image p {
+  color: white;
+  font-size: 1.235rem;
+  margin-top: 1rem;
+  pointer-events: none;
+}
