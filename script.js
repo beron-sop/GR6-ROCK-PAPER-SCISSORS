@@ -40,28 +40,32 @@ optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
         image.classList.add("active");
 
+        let imageSrc = e.target.querySelector("img").src;
         userResult.src = "images/rock.png";
+        cpuResult.src = "images/rock.png"; 
+
         result.textContent = "Wait...";
 
         optionImages.forEach((image2, index2) => {
             index !== index2 && image2.classList.remove("active");
         });
 
-        let imageSrc = e.target.querySelector("img").src;
-        userResult.src = imageSrc;
+        setTimeout(() => {
+            let randomNumber = Math.floor(Math.random() * 3);
+            let cpuImages = ["images/rock.png", "images/paper.png", "images/scissors.png"];
 
-        let randomNumber = Math.floor(Math.random() * 3);
-        let cpuImages = ["images/rock.png", "images/paper.png", "images/scissors.png"];
-        cpuResult.src = cpuImages[randomNumber];
+            gameContainer.classList.add("start");
+            setTimeout(() => {
+                cpuResult.src = cpuImages[randomNumber];
 
-        gameContainer.classList.add("start");
-        let time = setTimeout(() => {
-            gameContainer.classList.remove("start");
+                gameContainer.classList.remove("start");
 
-            let cpuValue = ["R", "P", "S"][randomNumber];
-            let userValue = ["R", "P", "S"][index];
+                userResult.src = imageSrc; 
+                let cpuValue = ["R", "P", "S"][randomNumber];
+                let userValue = ["R", "P", "S"][index];
 
-            updateScore(userValue, cpuValue);
-        }, 2500);
+                updateScore(userValue, cpuValue);
+            }, 2000);
+        });
     });
 });
